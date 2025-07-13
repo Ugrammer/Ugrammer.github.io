@@ -65,7 +65,7 @@ The available sequence alphabets support are DNA, RNA, and protein. The Input fi
 ## NOTE: 
  * Output Location: All output files will be created in the same folder as the executable file.
  * Alphabet: The default alphabet is DNA. To specify a different one, use the -a flag (e.g., -ap).
- * Spectrum Dumping: By default, the program will dump the spectrum for all k-mer sizes up to the maximum. This is equivalent to using the -dx 1-maximumk command.
+ * Spectrum Dumping: By default, the program will dump the spectrum for all k-mer sizes up to the maximum. This is equivalent to using the -dx 1-maxk command.
  * Minimum Frequency: The default minimum frequency is 2. If you set this to a higher value, singleton patterns will not be included in the output.
  * Saving Spectrum Files: To save a spectrum file, you must use the -t flag in conjunction with the -d flag to select the k-mer spectrum.
  * Help: For more information and a full list of commands, use -h or -help.
