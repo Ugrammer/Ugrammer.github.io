@@ -106,6 +106,3 @@ The available sequence alphabets support are DNA, RNA, and protein. The Input fi
 
   **Jittakorn Pullpothong**<br> Department of computer engineering, Faculty of engineering, Ramkhamhaeng University, Thailand.<br>
   Email: <jittakorn.p@rumail.ru.ac.th>
-
-
-   
