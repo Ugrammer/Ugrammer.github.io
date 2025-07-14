@@ -1,13 +1,17 @@
+# UPDATE version 2.0.0
+
+* Improve the algorithm and command-line flag.
+
 # UniversalMer
-  A k-mer counting tool for multiple sizes of k at once.
+  A CLI k-mer counting tool for multiple sizes of k at once.
 # OVERVIEW
 UniversalMer is a k-mer counting tool for multiple size of k at once.The program counts and summarizes the exact frequency of all k-mers from 1-mer to a user-defined maximum length (kmax). This kmax can be specified as any length or can be automatically determined by the longest repeated patterns found in the input sequence.
 The available sequence alphabets support are DNA, RNA, and protein. The Input file must be fasta format with .txt or .fasta or .fna. 
 
 ## The program offers several output options:
- * Dumping all k-mers: Outputs a complete list of every k-mer found.
- * Dumping chosen k-mer patterns: Provides lists of repeated or singleton k-mers.
- * Dumping the k-mer spectrum: Generates a summary of k-mer frequencies.
+ * Dumping all k-mers: Outputs a complete list of every k-mer for k = 1 to maxk found.
+ * Dumping chosen k-mer patterns: Provides lists of repeated or singleton k-mers for multiple k's.
+ * Dumping the k-mer spectrum: Generates a summary of k-mer frequencies for multiple k's.
  * Note: The program does not support canonical k-mer counting. You can use the output files with other programs to find canonical patterns. 
 
 ## The efficiency of the program depends on the sequence length (in base pairs) and the number of unique patterns.
@@ -63,9 +67,9 @@ The available sequence alphabets support are DNA, RNA, and protein. The Input fi
  * universalmer -k55 -m20 dna3.fasta
 
 ## NOTE: 
- * Output Location: All output files will be created in the same folder as the executable file.
+ * Output Location: All output files will be created in the current directory.
  * Alphabet: The default alphabet is DNA. To specify a different one, use the -a flag (e.g., -ap).
- * Spectrum Dumping: By default, the program will dump the spectrum for all k-mer sizes up to the maximum. This is equivalent to using the -dx 1-maxk command.
+ * Spectrum Dumping: By default, the program will dump the spectrum for all k-mer sizes up to the maximum. This is equivalent to using the -dx 1-maximumk command.
  * Minimum Frequency: The default minimum frequency is 2. If you set this to a higher value, singleton patterns will not be included in the output.
  * Saving Spectrum Files: To save a spectrum file, you must use the -t flag in conjunction with the -d flag to select the k-mer spectrum.
  * Help: For more information and a full list of commands, use -h or -help.
@@ -80,11 +84,12 @@ The available sequence alphabets support are DNA, RNA, and protein. The Input fi
 
    The program will count k-mers of k = 1 to 1000 from xxx.fasta without save patterns file.
    
-   CAUTION: Please be mindful of the number of singleton patterns before proceeding with the dump. For some chosen values of k, the output file size could exceed 10 GB.
+   CAUTION: Please be mindful of the number of singleton patterns before proceeding with the dump. For some chosen values of k, the output file size could exceed 10 GB.
 
 # OUTPUT
 
-Your program will save the output files in the same folder as the executable file.  The output files are:
+Your program will save the output files in the current directory.  The output files are:
+
  * Allrepeatspattern.csv: Contains all patterns of 1-mers to the maximum k-mer size (kmax).
  * repeatsPatterns.csv: Contains repeat patterns for the user-specified range of m-mers to n-mers.
  * singletonPatterns.csv: Contains singleton patterns for the user-specified range of m-mers to n-mers.
